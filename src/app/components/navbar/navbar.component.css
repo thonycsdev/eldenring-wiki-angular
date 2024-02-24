@@ -11,10 +11,16 @@ span {
   height: 50px;
   display: flex;
   align-items: center;
-}
 
+}
 .title {
   flex:1;
   padding-left: 10%;
   font-weight: bold;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
 }
