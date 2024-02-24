@@ -1,0 +1,20 @@
+.menu {
+  display: flex;
+  justify-content: space-around;
+  background: #afe3c0;
+  width: 100vw;
+  align-items: end;
+}
+
+span {
+  width: 15%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.title {
+  flex:1;
+  padding-left: 10%;
+  font-weight: bold;
+}
