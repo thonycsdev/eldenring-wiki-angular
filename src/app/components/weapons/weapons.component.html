@@ -1,1 +1,5 @@
-<app-card [weapon]="weapons" />
+<ul>
+  <li *ngFor="let weapon of weapons">
+  <app-card [weapon]=weapon/>
+  </li>
+</ul>

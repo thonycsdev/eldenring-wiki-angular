@@ -1,7 +1,8 @@
 .card {
   display: flex;
+  padding: 10px;
   width: 250px;
-  height: 200px;
+  height: fit-content;
   flex-direction: column;
 }
 
@@ -12,6 +13,7 @@
   background: #54428E;
 }
 .footer {
+  max-height: fit-content;
   background: #90C290;
   display: flex;
   flex-direction: column;
