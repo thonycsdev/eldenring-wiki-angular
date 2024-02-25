@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { User } from '../../../types/user';
+import { Weapon } from '../../../types/weapons';
 @Component({
   selector: 'app-card',
   standalone: true,
@@ -8,5 +9,6 @@ import { User } from '../../../types/user';
   styleUrl: './card.component.css'
 })
 export class CardComponent {
-@Input() user: User | null = null
+ @Input() weapon: Weapon = {} as Weapon
 }
+
