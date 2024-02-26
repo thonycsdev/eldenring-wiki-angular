@@ -6,6 +6,9 @@
   flex-direction: column;
 }
 
+a {
+  text-decoration:none;
+}
 
 .main {
   height: 65%;
@@ -22,7 +25,6 @@
   border-radius: 0 0 15px 15px;
   color: white;
   gap:4px;
-  font-weight: bold;
 }
 
 

@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="details">
+    <div class="image-container">
+      <img [src]="weapon.image" />
+    </div>
+    <div class="info-container">
+      <table>
+        <thead>
+          <tr class="weapon-name">
+            {{weapon.name}}
+          </tr>
+          <td>Description</td>
+          <td>Damage Type</td>
+        </thead>
+        <tbody>
+          <td>{{weapon.description}}</td>
+          <td>
+            <table>
+              <thead>
+                <td
+                  *ngFor="let data of weapon.attack"
+                >
+                  {{data.name}}
+                </td>
+              </thead>
+              <tbody>
+                <td
+                  *ngFor="let data of weapon.attack"
+                >
+                  {{data.amount}}
+                </td>
+              </tbody>
+            </table>
+          </td>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
