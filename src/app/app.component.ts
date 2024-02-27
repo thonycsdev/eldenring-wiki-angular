@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,7 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrl: './app.component.css',
   imports: [
     NavbarComponent,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule
   ],
 
 })

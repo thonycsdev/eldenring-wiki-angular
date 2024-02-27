@@ -1,5 +1,9 @@
+<div class="search-bar" (input) = "filterByTerm($event)">
+  <input type="search" />
+  <button>Search</button>
+</div>
 <ul>
-  <li *ngFor="let weapon of weapons">
-  <app-card [weapon]=weapon/>
+  <li *ngFor="let weapon of filteredWeapons">
+    <app-card [weapon]="weapon" />
   </li>
 </ul>
