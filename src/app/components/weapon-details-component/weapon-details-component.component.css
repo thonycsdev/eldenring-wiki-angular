@@ -5,6 +5,11 @@
   justify-content: center;
   align-items: center;
 }
+.weapon-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
 .details {
   display: flex;
   justify-items: center;
