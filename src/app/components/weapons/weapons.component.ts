@@ -1,4 +1,4 @@
-import { Component, inject } from "@angular/core";
+import { Component } from "@angular/core";
 import { CardComponent } from "../card/card.component";
 import { Weapon } from "../../../types/weapons";
 import WeaponsService from "./weapons.service";
@@ -22,20 +22,26 @@ export class WeaponsComponent {
   public weapons: Weapon[] = [];
   public filteredWeapons: Weapon[] = [];
   public searchTerm: string = "";
-  private readonly service: WeaponsService =
-    inject(WeaponsService);
+  constructor(
+    private weaponsService: WeaponsService
+  ) {}
 
-  constructor() {
-    this.service.fetchWeaponsData().then((x) => {
-      this.weapons = x;
-      this.filteredWeapons = [...x]
+  ngOnInit() {
+    this.weaponsService.fetchWeaponsData().subscribe((r) => {
+      this.filteredWeapons = r;
+      this.weapons = [...r];
     });
   }
-
   filterByTerm(event: Event) {
-    this.searchTerm = (event.target as HTMLInputElement).value;
-    this.filteredWeapons = [...this.weapons].filter((x) =>
-      x.name.toLowerCase().includes(this.searchTerm.toLowerCase())
+    this.searchTerm = (
+      event.target as HTMLInputElement
+    ).value;
+    this.filteredWeapons = [
+      ...this.weapons,
+    ].filter((x) =>
+      x.name
+        .toLowerCase()
+        .includes(this.searchTerm.toLowerCase())
     );
   }
 }

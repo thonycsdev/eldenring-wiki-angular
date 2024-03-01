@@ -2,12 +2,15 @@ import { Component, inject } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import WeaponsService from "../weapons/weapons.service";
 import { Weapon } from "../../../types/weapons";
-import { NgFor } from "@angular/common";
+import {
+  CommonModule,
+  NgFor,
+} from "@angular/common";
 
 @Component({
   selector: "app-weapon-details-component",
   standalone: true,
-  imports: [NgFor],
+  imports: [NgFor, CommonModule],
   templateUrl:
     "./weapon-details-component.component.html",
   styleUrl:
@@ -15,44 +18,22 @@ import { NgFor } from "@angular/common";
 })
 export class WeaponDetailsComponentComponent {
   router: ActivatedRoute = inject(ActivatedRoute);
+  isLoading: boolean = true;
   weapon: Weapon = {} as Weapon;
-  private readonly service: WeaponsService =
-    inject(WeaponsService);
   weaponId: string = "";
-  constructor() {
-    this.defineWeaponIdOnReload();
-    this.fetchCurrentWeaponData();
-  }
+  constructor(private service: WeaponsService) {}
 
-
-  private defineWeaponIdOnReload(){
-    const weaponId = this.router.snapshot.params["id"];
-    const storedValue = localStorage.getItem("weaponId");
-    if (weaponId === storedValue) {
-      this.weaponId = weaponId;
-      return;
-    }
-    if(weaponId && weaponId != storedValue){
-      localStorage.setItem("weaponId", weaponId);
-      this.weaponId = weaponId;
-      return;
-    }
-    if(!storedValue){
-      localStorage.setItem("weaponId", weaponId);
-      this.weaponId = weaponId;
-      return;
-    }
-    if(!weaponId){
-      this.weaponId = storedValue;
-      return;
-    }
-  }
-  private fetchCurrentWeaponData(){
+  ngOnInit() {
+    this.isLoading = true;
+    this.router.params.subscribe(
+      (params) => (this.weaponId = params["id"])
+    );
     this.service
       .fetchWeaponById(this.weaponId)
-      .then((r) => {
+      .subscribe((r) => {
+        this.isLoading = false;
         this.weapon = r;
-        console.log(r);
       });
+    console.log({ Weapon: this.weapon });
   }
 }
