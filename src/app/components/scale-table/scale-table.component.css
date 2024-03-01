@@ -1,0 +1,11 @@
+.inner-table {
+	padding: 2px;
+	width: 100%;
+	display: table;
+}
+.container td:nth-child(odd) {
+	background: #323c50;
+}
+.container td:nth-child(even) {
+	background-color: #2c3446;
+}

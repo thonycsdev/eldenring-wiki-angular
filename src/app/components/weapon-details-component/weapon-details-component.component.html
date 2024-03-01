@@ -1,43 +1,33 @@
-<div class="container" >
-  <div class="details">
-    <div class="image-container">
-      <img [src]="weapon.image" />
-    </div>
-    <div class="info-container">
-      <table>
-        <thead>
-          <tr class="weapon-name">
-            {{weapon.name}}
-          </tr>
-          <td>Description</td>
-          <td>Damage Type</td>
-          <td>Weight</td>
-          <td>Category</td>
-        </thead>
-        <tbody>
-          <td>{{weapon.description}}</td>
-          <td>
-            <table>
-              <thead>
-                <td
-                  *ngFor="let data of weapon.attack"
-                >
-                  {{data.name}}
-                </td>
-              </thead>
-              <tbody>
-                <td
-                  *ngFor="let data of weapon.attack"
-                >
-                  {{data.amount}}
-                </td>
-              </tbody>
-            </table>
-          </td>
-          <td>{{weapon.weight}}</td>
-          <td>{{weapon.category}}</td>
-        </tbody>
-      </table>
-    </div>
-  </div>
+<div class="container">
+	<div class="details">
+		<div class="image-container">
+			<img [src]="weapon.image" />
+		</div>
+		<div class="info-container">
+			<table>
+				<thead>
+					<th><h1>Description</h1></th>
+					<th><h1>Damage Type</h1></th>
+					<th><h1>Weight</h1></th>
+					<th><h1>Category</h1></th>
+					<th><h1>Scale</h1></th>
+					<th><h1>Requirements</h1></th>
+				</thead>
+				<tbody>
+					<td>{{ weapon.description }}</td>
+					<td>
+						<app-inner-table [weapon]="weapon" />
+					</td>
+					<td>{{ weapon.weight }}</td>
+					<td>{{ weapon.category }}</td>
+					<td>
+						<app-scale-table [weapon]="weapon" />
+					</td>
+					<td>
+						<app-requirements-table [weapon]="weapon" />
+					</td>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </div>

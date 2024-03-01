@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SpellsComponent } from "./spells.component";
+import { ScaleTableComponent } from "./scale-table.component";
 
-describe("SpellsComponent", () => {
-	let component: SpellsComponent;
-	let fixture: ComponentFixture<SpellsComponent>;
+describe("ScaleTableComponent", () => {
+	let component: ScaleTableComponent;
+	let fixture: ComponentFixture<ScaleTableComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [SpellsComponent],
+			imports: [ScaleTableComponent],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(SpellsComponent);
+		fixture = TestBed.createComponent(ScaleTableComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});

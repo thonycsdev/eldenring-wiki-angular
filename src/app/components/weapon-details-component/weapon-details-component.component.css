@@ -1,47 +1,73 @@
-.container {
-  height: 100vh;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 40px;
-  text-align: center;
+h1 {
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1em;
+	text-align: center;
 }
-.weapon-name {
-  border: 1px solid black;
-  font-size: 24px;
-  font-weight: bold;
-  margin-bottom: 10px;
+.container {
+	color: white;
+	overflow: hidden;
+	width: 100%;
+	display: table;
+}
+.container td,
+.container th {
+	padding-bottom: 2%;
+	padding-top: 2%;
+}
+
+.container th {
+	width: 12%;
+	background: #1f2739;
+}
+
+.container td {
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: center;
+}
+
+.inner-table {
+	padding: 2px;
+	width: 100%;
+	display: table;
+}
+.container td:nth-child(odd) {
+	background: #323c50;
+}
+.container td:nth-child(even) {
+	background-color: #2c3446;
 }
 .details {
-  display: flex;
-  justify-items: center;
-  align-items: center;
+	display: flex;
+	justify-items: center;
+	align-items: center;
 }
 .image-container {
-  padding: 40px;
+	padding: 40px;
 }
 
 .image-container img {
-  width: 100%;
-  height: 100%;
-  object-fit: fill;
+	width: 100%;
+	height: 100%;
+	object-fit: fill;
 }
 .info-container {
-  max-width: 60%;
-  padding: 40px;
+	max-width: 90%;
+	padding: 40px;
 }
 
 thead td {
-  font-weight: bold;
-  font-size: 18px;
-  padding-top: 10px;
-  border: 1px solid black;
+	font-weight: bold;
+	font-size: 18px;
+	padding-top: 10px;
+	border: 1px solid black;
+	-webkit-box-shadow: 0 2px 2px -2px #0e1119;
+	-moz-box-shadow: 0 2px 2px -2px #0e1119;
+	box-shadow: 0 2px 2px -2px #0e1119;
 }
 
 tbody td {
-  padding: 5px;
-  border: 1px solid black;
-  font-size: 16px;
-  padding-top: 10px
+	font-weight: normal;
+	font-size: 1em;
 }

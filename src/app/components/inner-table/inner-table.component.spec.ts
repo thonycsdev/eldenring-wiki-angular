@@ -1,17 +1,17 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { SpellsComponent } from "./spells.component";
+import { InnerTableComponent } from "./inner-table.component";
 
-describe("SpellsComponent", () => {
-	let component: SpellsComponent;
-	let fixture: ComponentFixture<SpellsComponent>;
+describe("InnerTableComponent", () => {
+	let component: InnerTableComponent;
+	let fixture: ComponentFixture<InnerTableComponent>;
 
 	beforeEach(async () => {
 		await TestBed.configureTestingModule({
-			imports: [SpellsComponent],
+			imports: [InnerTableComponent],
 		}).compileComponents();
 
-		fixture = TestBed.createComponent(SpellsComponent);
+		fixture = TestBed.createComponent(InnerTableComponent);
 		component = fixture.componentInstance;
 		fixture.detectChanges();
 	});
